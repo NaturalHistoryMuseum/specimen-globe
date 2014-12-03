@@ -10,7 +10,7 @@
       body {
         margin: 0;
         padding: 0;
-        background: #000000 url(/globe/loading.gif) center center no-repeat;
+        background: #000000 url(assets/loading.gif) center center no-repeat;
         color: #ffffff;
         font-family: sans-serif;
         font-size: 13px;
@@ -95,7 +95,7 @@
         position: absolute;
         bottom: 15px;
         left: 20px;
-        background: url(/globe/ce.png);
+        background: url(assets/ce.png);
       }
 
 
@@ -109,11 +109,11 @@
     NHM Specimens
   </div>
 
-  <script type="text/javascript" src="/globe/third-party/Three/ThreeWebGL.js"></script>
-  <script type="text/javascript" src="/globe/third-party/Three/ThreeExtras.js"></script>
-  <script type="text/javascript" src="/globe/third-party/Three/RequestAnimationFrame.js"></script>
-  <script type="text/javascript" src="/globe/third-party/Three/Detector.js"></script>
-  <script type="text/javascript" src="/globe/third-party/Tween.js"></script>
+  <script type="text/javascript" src="third-party/Three/ThreeWebGL.js"></script>
+  <script type="text/javascript" src="third-party/Three/ThreeExtras.js"></script>
+  <script type="text/javascript" src="third-party/Three/RequestAnimationFrame.js"></script>
+  <script type="text/javascript" src="third-party/Three/Detector.js"></script>
+  <script type="text/javascript" src="third-party/Tween.js"></script>
   <script type="text/javascript" src="globe.js"></script>
   <script type="text/javascript">
 
@@ -123,9 +123,13 @@
 
       var container = document.getElementById('container');
       var globe = new DAT.Globe(container);
-      console.log(globe);
 
-			var xhr;
+//      var data = JSON.parse('specimens.json');
+//
+//      console.log(data);
+
+
+      var xhr;
       xhr = new XMLHttpRequest();
       xhr.open('GET', 'specimens.json', true);
       xhr.onreadystatechange = function(e) {
@@ -141,7 +145,6 @@
         }
       };
       xhr.send(null);
-			
     }
 
   </script>
